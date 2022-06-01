@@ -2,13 +2,18 @@ import os
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail, To
 
+my_email_address = os.environ.get("MY_EMAIL_ADDRESS")
+to_1 = my_email_address.replace("@", "+1@")
+to_2 = my_email_address.replace("@", "+2@")
+address_list - [to_1,to_2]
+
 name_list = ["Alice", "Bob"]
 color_list = ["RED", "GREEN"]
 
 to_emails = []
-for name, color in zip(name_list, color_list):
+for addree,name, color in zip(address_list, name_list, color_list):
     to = To(
-        email="to@example.com",
+        email=address,
         name=name,
         substitutions={"-name-":name, "-color-":color}
         )
@@ -22,7 +27,7 @@ message = Mail(
     is_multiple=True
     )
 
-sendgrid_client = SendGridAPIClient("SG.abcd")
+sendgrid_client = SendGridAPIClient(os.environ.get("SENDGRID_API_KEY"))
 response = sendgrid_client.send(message)
 print(response.status_code)
 print(response.body)
