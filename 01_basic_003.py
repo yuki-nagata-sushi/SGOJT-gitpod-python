@@ -20,10 +20,10 @@ path = os.getcwd()
 filepath = str(path) + "/recipients.csv"
 
 #アドレスを一行ずつ書き込んでいく
-with open(filepath,"w",encoding="utf-8") as f:
-    f.write("address,age/n")
+with open(filepath,mode="w",encoding="utf-8") as f:
+    f.write("address,age\n")
     for address,age in zip(address_list,age_list):
-        f.write(address + "," + age + "\n")
+        f.write(address + "," + str(age) + "\n")
 
 
 #pandas.Dataframeで丸ごと中身を作ってからCSVに出す
