@@ -10,4 +10,3 @@ print(r.text) #こうするとちゃんとHTMLが見える
 
 with open("r.txt", mode="w") as f:
     f.write(r.text) #txtに書き出しても、日本語の文字化けは直らない。terminalの問題ではなさそう。
-

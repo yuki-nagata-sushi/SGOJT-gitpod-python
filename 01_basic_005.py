@@ -2,6 +2,8 @@ import os
 import json
 import requests
 
+# requestsライブラリを利用してメール送信リクエストをPOSTするスクリプト
+
 # 環境変数から各種値を取ってくる
 api_key = os.environ.get("SENDGRID_API_KEY")
 to_address = os.environ.get("MY_EMAIL_ADDRESS")
@@ -29,7 +31,6 @@ payload = {
         }
     ]
 }
-
 
 endpoint = "https://api.sendgrid.com/v3/mail/send"
 json_data = json.dumps(payload) # ここで辞書→json変換している。そうしないと400Badrequestが返ってくる

@@ -28,6 +28,3 @@ with open(filepath,mode="w",encoding="utf-8") as f:
 
 #pandas.Dataframeで丸ごと中身を作ってからCSVに出す
 #https://karupoimou.hatenablog.com/entry/2019/04/29/004305
-
-
-
