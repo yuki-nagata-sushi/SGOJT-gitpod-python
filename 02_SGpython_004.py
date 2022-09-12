@@ -33,7 +33,7 @@ for itr_address,itr_name in zip(to_list,name_list): # 宛先アドレスと名�
         "subject": "Hello %name% !"
         }
     )# 上記構造は通常通りの形式を踏襲する。これが1セットになってリストに追加されていく。
-
+添付ファイル出資
 # step4: メール内容を用意する
 data_dict = defaultdict(dict) # dict型の初期化（宣言）。defaultdictを使うとkeyの存在有無を確かめずに済む
 data_dict["personalizations"] = temp_list
