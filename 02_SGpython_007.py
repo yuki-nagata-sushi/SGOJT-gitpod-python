@@ -1,7 +1,7 @@
 import sendgrid
 import os 
 
-# 「contactlistに複数のリストを作成するスクリプト」のダメな例
+# contactlistに複数のリストを作成するスクリプト
 
 sg = sendgrid.SendGridAPIClient(os.environ.get("SENDGRID_API_KEY"))
 
