@@ -5,7 +5,7 @@ import os
 
 sg = sendgrid.SendGridAPIClient(os.environ.get("SENDGRID_API_KEY"))
 
-# 参考までに現存するcontactlistの一覧を取得してみる
+# # 参考までに現存するcontactlistの一覧を取得してみる
 # response_get = sg.client.contactdb.lists.get()
 # print(response_get.status_code)
 # print(response_get.body)

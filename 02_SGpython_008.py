@@ -2,6 +2,7 @@ import sendgrid
 import os
 from python_http_client.exceptions import HTTPError
 
+# 削除するリストをリストの「名前」で指定できると勘違いして書いたスクリプト
 # https://github.com/sendgrid/sendgrid-python/blob/main/examples/contactdb/contactdb.py#:~:text=%23-,Delete,-Multiple%20lists%20%23
 sg = sendgrid.SendGridAPIClient(api_key=os.environ.get("SENDGRID_API_KEY"))
 
@@ -15,5 +16,4 @@ try:
     print(response.body)
     print(response.headers)
 except HTTPError as e:
-    print(e.to_dict)
-
+    print(e.to_dict)# idが指定されていないというエラーが返ってくる
