@@ -1,10 +1,10 @@
 import os,requests
-from flask import Flask
+import flask
 from json import dumps
 
 slack_incoming_webhook = os.environ.get("SLACK_INCOMING_WEBHOOK")
 
-app = Flask(__name__)
+app = flask.Flask(__name__)
 
 @app.route("/", methods=["POST"])
 def main():
@@ -29,5 +29,5 @@ def main():
     return ""
 
 if __name__ == "__main__":
-    # app.run(debug=True,host="0.0.0.0")
-    app.run(debug=True)
+    app.run(debug=True,host="0.0.0.0", port=int(os.environ.get("PORT", 3000)))
+    # app.run(debug=True)
