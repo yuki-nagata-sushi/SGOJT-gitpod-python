@@ -17,8 +17,8 @@ data = {
     "from": {"email": os.environ.get("MY_EMAIL_ADDRESS_FROM")},
     "content": [
         {
-            "type": "text/plain", # 添付ファイルがattachmentじゃなくてinlineだとどうなるんだろう？
-            "value": "test Body\nこのメールを配信停止する：<%asm_group_unsubscribe_raw_url%>"
+            "type": "text/html", # 添付ファイルがattachmentじゃなくてinlineだとどうなるんだろう？
+            "value": "<a href=<%asm_preferences_raw_url%>>配信停止を管理する</a><br />test Body\nこのメールをどうにかする：<%asm_preferences_raw_url%>"
         }
     ],
     "asm": {
